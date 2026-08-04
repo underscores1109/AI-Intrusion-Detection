@@ -3,259 +3,251 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Web%20Application-black?logo=flask)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green)
-![Splunk](https://img.shields.io/badge/Splunk-Enterprise-65A637?logo=splunk)
+![Splunk](https://img.shields.io/badge/Splunk-Enterprise-success)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap)
 
-An AI-powered **Network Intrusion Detection System (NIDS)** that uses a **Random Forest Machine Learning model** to classify network traffic as **Normal** or **Attack**. The project features a **Flask-based web application**, interactive dashboard, automated prediction reports, confidence scoring, and **Splunk Enterprise SIEM integration** for real-time intrusion monitoring.
+An AI-powered **Network Intrusion Detection System (NIDS)** that uses a **Random Forest Machine Learning model** to classify network traffic as **Normal** or **Attack**. The project features a Flask-based web application, an interactive prediction dashboard, automated log generation, and **Splunk Enterprise SIEM** integration for security monitoring.
 
 ---
 
-# 📘 Table of Contents
+# 📚 Table of Contents
 
-- [Features](#-features)
-- [System Architecture](#-system-architecture)
-- [Workflow](#-workflow)
-- [Tech Stack](#-tech-stack)
-- [Dataset](#-dataset)
-- [Machine Learning Model](#-machine-learning-model)
-- [Splunk Integration](#-splunk-integration)
-- [Installation & Usage](#-installation--usage)
-- [Project Structure](#-project-structure)
-- [Results](#-results)
-- [Screenshots](#-screenshots)
-- [Future Enhancements](#-future-enhancements)
-- [Author](#-author)
+- Features
+- System Architecture
+- Workflow
+- Tech Stack
+- Dataset
+- Installation
+- Running the Project
+- Screenshots
+- Splunk Integration
+- Project Report
+- Future Improvements
+- Author
 
 ---
 
-# 🚀 Features
+# ✨ Features
 
-- 📂 Upload Network Traffic CSV Files
-- 🤖 AI-powered Intrusion Detection
-- 🌲 Random Forest Classifier
-- 📊 Confidence Score Generation
-- 📈 Interactive Dashboard
-- 📉 Pie & Bar Chart Visualizations
-- 📋 Prediction Summary Cards
-- 📥 Download Prediction Reports
-- 📝 Automatic Security Log Generation
-- 🛡️ Splunk Enterprise SIEM Dashboard
-- ⚡ Real-Time Intrusion Monitoring
+- Machine Learning based Intrusion Detection
+- Random Forest Classifier
+- Flask Web Application
+- Upload CSV Network Traffic
+- Automatic Data Preprocessing
+- Prediction Dashboard
+- Confidence Score Generation
+- Download Prediction Report
+- Security Log Generation
+- Splunk Enterprise Dashboard
+- Interactive Charts
+- Responsive UI
 
 ---
 
 # 🏗️ System Architecture
 
-![Architecture Diagram](screenshots/architecture.png)
-
-> The system integrates machine learning, Flask, and Splunk Enterprise into a unified intrusion detection pipeline capable of detecting malicious network traffic and generating security monitoring dashboards.
+![Architecture](screenshots/architecture.png)
 
 ---
 
-# 💡 Workflow
+# 🔄 Workflow
 
-1. Upload Network Traffic CSV
-2. Flask receives the dataset
-3. Data preprocessing is performed
-4. Random Forest predicts traffic type
-5. Confidence scores are generated
-6. Dashboard displays results
-7. Prediction report is generated
-8. Security logs are created
-9. Splunk Enterprise visualizes intrusion events
+```
+User
+   │
+   ▼
+Flask Web Application
+   │
+   ▼
+Upload Network Traffic CSV
+   │
+   ▼
+Data Preprocessing
+   │
+   ▼
+Random Forest Model
+   │
+   ├────────► Prediction Dashboard
+   │
+   └────────► Security Log Generator
+                    │
+                    ▼
+            Splunk Enterprise SIEM
+                    │
+                    ▼
+          SOC Monitoring Dashboard
+```
 
 ---
 
-# 🧩 Tech Stack
+# 💻 Tech Stack
 
-| Layer | Technology |
-|--------|------------|
-| Frontend | HTML, CSS, Bootstrap |
-| Backend | Flask |
-| Programming Language | Python |
-| Machine Learning | Scikit-Learn |
-| ML Algorithm | Random Forest |
-| Data Processing | Pandas, NumPy |
-| Visualization | Chart.js |
-| Dataset | NSL-KDD |
-| SIEM | Splunk Enterprise |
-| Version Control | Git & GitHub |
+### Programming
+
+- Python
+
+### Machine Learning
+
+- Scikit-learn
+- Random Forest
+
+### Data Processing
+
+- Pandas
+- NumPy
+
+### Backend
+
+- Flask
+
+### Frontend
+
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- Chart.js
+
+### SIEM
+
+- Splunk Enterprise
+
+### Version Control
+
+- Git
+- GitHub
 
 ---
 
 # 📂 Dataset
 
-**Dataset Used:** NSL-KDD
+The project uses the **NSL-KDD Dataset** for training and testing.
 
-The NSL-KDD dataset is an improved version of the KDD Cup 1999 dataset designed for evaluating intrusion detection systems.
+Dataset files include:
 
-It contains:
+- KDDTrain+
+- KDDTest+
 
-- Normal Traffic
-- DoS Attacks
-- Probe Attacks
-- R2L Attacks
-- U2R Attacks
+The dataset is preprocessed before being passed to the trained Random Forest model.
 
 ---
 
-# 🤖 Machine Learning Model
+# ⚙️ Installation
 
-Algorithm Used:
-
-**Random Forest Classifier**
-
-### Performance
-
-| Metric | Score |
-|---------|-------|
-| Accuracy | **99.96%** |
-| Precision | **1.00** |
-| Recall | **1.00** |
-| F1-Score | **1.00** |
-
----
-
-# 🛡️ Splunk Integration
-
-The application automatically generates security logs after every prediction.
-
-Generated Log Fields:
-
-- Timestamp
-- Prediction
-- Confidence
-- Status
-
-The logs are indexed into **Splunk Enterprise** to create a SIEM dashboard featuring:
-
-- 🚨 Total Attack Alerts
-- ✅ Normal Network Traffic
-- 📊 Attack vs Normal Distribution
-- 📈 Intrusion Detection Timeline
-- 📋 Recent Security Alerts
-
----
-
-# ⚙️ Installation & Usage
+Clone the repository
 
 ```bash
 git clone https://github.com/underscores1109/AI-Intrusion-Detection.git
+```
 
+Go into the project folder
+
+```bash
 cd AI-Intrusion-Detection
+```
 
-python -m venv venv
+Install dependencies
 
-venv\Scripts\activate
-
+```bash
 pip install -r requirements.txt
+```
 
+Run the Flask application
+
+```bash
 python app.py
 ```
 
-Open:
+Open your browser
 
 ```
 http://127.0.0.1:5000
 ```
 
-Upload a CSV file and start intrusion detection.
-
----
-
-# 📁 Project Structure
-
-```text
-AI-Intrusion-Detection/
-│
-├── dataset/
-├── logs/
-├── models/
-├── outputs/
-├── screenshots/
-├── src/
-├── static/
-├── templates/
-├── uploads/
-├── app.py
-├── requirements.txt
-└── README.md
-```
-
----
-
-# 📈 Results
-
-✔ Model Accuracy: **99.96%**
-
-✔ Real-Time Intrusion Detection
-
-✔ Confidence Score Generation
-
-✔ Downloadable Prediction Reports
-
-✔ Splunk Enterprise Dashboard
-
-✔ Automated Security Log Generation
-
 ---
 
 # 📸 Screenshots
 
-## 🏗️ System Architecture
-
-![Architecture Diagram](https://raw.githubusercontent.com/underscores1109/AI-Intrusion-Detection/main/screenshots/architecture.png)
-
----
-
 ## 🏠 Home Page
 
-![Home Page](https://raw.githubusercontent.com/underscores1109/AI-Intrusion-Detection/main/screenshots/home_page.png)
+![Home Page](screenshots/home_page.png)
 
 ---
 
 ## 📊 Prediction Dashboard
 
-![Dashboard](https://raw.githubusercontent.com/underscores1109/AI-Intrusion-Detection/main/screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.png)
 
 ---
 
 ## 🛡️ Splunk Enterprise Dashboard
 
-![Splunk Dashboard](https://raw.githubusercontent.com/underscores1109/AI-Intrusion-Detection/main/screenshots/splunk_dashboard.png)
+![Splunk Dashboard](screenshots/splunk_dashboard.png)
+
 ---
 
-# 🚀 Future Enhancements
+# 📈 Splunk Integration
 
-- Deep Learning-Based Intrusion Detection
-- Real-Time Packet Capture
-- Live Network Monitoring
-- Email & SMS Alert System
+The application automatically generates structured security logs after every prediction.
+
+These logs are imported into **Splunk Enterprise SIEM**, where they are visualized using dashboards showing:
+
+- Total Attacks
+- Normal Traffic
+- Attack Distribution
+- Security Timeline
+- Recent Alerts
+
+---
+
+# 📄 Project Report
+
+A detailed report covering:
+
+- Introduction
+- Literature Survey
+- System Architecture
+- Methodology
+- Implementation
+- Random Forest Algorithm
+- Results
+- Splunk Integration
+- Future Scope
+
+is available here:
+
+📥 **[AI Intrusion Detection Project Report](docs/AI_Intrusion_Detection_Project_Report.pdf)**
+
+---
+
+# 🚀 Future Improvements
+
+- Real-time Packet Capture
+- Deep Learning Models (LSTM/CNN)
 - Docker Deployment
-- REST API Integration
-- Cloud Deployment (AWS/Azure)
-- Multi-Class Attack Classification
+- AWS Cloud Deployment
+- Multi-Class Attack Detection
+- Email Alert System
+- REST API
+- User Authentication
+- Threat Intelligence Integration
 
 ---
 
 # 👨‍💻 Author
 
-## Bhargav Naidu
+**Bhargav Naidu S**
 
-🎓 B.Tech – Computer Science (Cyber Security)
+Cybersecurity Enthusiast
 
-🛡️ Aspiring SOC Analyst | Passionate about Cybersecurity, AI, Machine Learning, and SIEM Technologies.
-
-### 📧 Connect with Me
-
-**GitHub**
+GitHub
 
 https://github.com/underscores1109
 
-**LinkedIn**
+LinkedIn
 
 https://www.linkedin.com/in/bhargava-naidu-sasumanu-684329340/
 
 ---
 
-⭐ If you found this project useful, consider giving it a **Star** on GitHub!
+⭐ If you found this project useful, consider giving it a Star.
